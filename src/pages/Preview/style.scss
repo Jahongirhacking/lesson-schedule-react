@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+.table-part {
+  margin: auto;
+  padding: 15px;
+  width: min(100%, 1000px);
+  justify-content: center;
+  & > .ant-flex {
+    min-width: min(300px, 100%);
+    align-items: center;
+  }
+}
+
+.lesson-part {
+  margin: auto;
+  padding: 15px;
+  width: min(100%, 1000px);
+  justify-content: space-between;
+  & > .ant-flex {
+    min-width: min(400px, 100%);
+  }
+}
