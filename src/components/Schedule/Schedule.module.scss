@@ -1,0 +1,96 @@
+$redBg: #fff0f6;
+$redColor: #c41d7f;
+$greenBg: #f6ffed;
+$greenColor: #389e0d;
+$blueBg: #e6f4ff;
+$blueColor: #0958d9;
+
+.schedule-card {
+  overflow: hidden;
+  min-height: 83px;
+  border-radius: 4px;
+  padding: 4px;
+  border: none;
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
+  box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.4s ease;
+
+  .schedule-wrapper {
+    padding-left: 8px;
+    position: relative;
+    font-size: 13px;
+
+    * {
+      color: inherit;
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      border-radius: 105px;
+    }
+
+    & > strong {
+      font-weight: 600;
+    }
+  }
+
+  &.red-bg-card {
+    &,
+    strong {
+      color: $redColor !important;
+    }
+
+    .schedule-wrapper::after {
+      background-color: $redColor;
+    }
+    svg {
+      fill: $redColor;
+      path {
+        fill: inherit;
+      }
+    }
+  }
+
+  &.green-bg-card {
+    &,
+    strong {
+      color: $greenColor !important;
+    }
+
+    .schedule-wrapper::after {
+      background-color: $greenColor;
+    }
+    svg {
+      fill: $greenColor;
+      path {
+        fill: inherit;
+      }
+    }
+  }
+
+  &.blue-bg-card {
+    &,
+    strong {
+      color: $blueColor !important;
+    }
+
+    .schedule-wrapper::after {
+      background-color: $blueColor;
+    }
+    svg {
+      fill: $blueColor;
+      path {
+        fill: inherit;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.schedule-card {
+  .attendance-status {
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
+
+    .anticon {
+      font-size: 30pt;
+      opacity: 0.15;
+      z-index: 0;
+
+      &.anticon-check-circle > svg {
+        fill: #389e0d;
+      }
+
+      &.anticon-warning > svg {
+        fill: orangered;
+      }
+    }
+  }
+}
