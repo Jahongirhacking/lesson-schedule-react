@@ -2,7 +2,7 @@
 
 Lesson Schedule component for everyone to use
 
-## How Create A Timetable?
+## How To Create A Timetable?
 
 ![image](https://github.com/user-attachments/assets/6e60f750-6f31-460e-adf9-21b5af7c1fbf)
 ![image](https://github.com/user-attachments/assets/9676fde5-c9cc-4383-91b3-257665e95a16)
@@ -10,11 +10,15 @@ Lesson Schedule component for everyone to use
 ```bash
 npm i lesson-schedule-react
 ```
+
 <br/>
+
 Firstly, import `makeTimeTable` HOC from `lesson-schedule-react` package:
+
 ```typescript
 import { makeTimeTable } from "lesson-schedule-react"
 ```
+
 and then create a timetable component by calling `makeTimeTable`, you can customize your Timetable by changing the props object given to it
 
 ```typescript
@@ -27,7 +31,7 @@ const TimetableComponent = makeTimeTable({
 
 <br/>
 
-Secondly, use `TimetableComponent` in your code and add the schedule items to its props:
+Secondly and lastly, use `TimetableComponent` in your code and add the schedule items to its props:
 
 ```typescript
 import { ISchedule } from "lesson-schedule-react"
@@ -62,6 +66,11 @@ import { ISchedule } from "lesson-schedule-react"
   />
 </>
 ```
+<br/>
+
+The Timetable can show weekly or daily and you can see other days by clicking left and right buttons, "Today" button leads you current date which is today: 
+
+![image](https://github.com/user-attachments/assets/125f827e-d37a-4807-a912-f5da17762d8b)
 
 ## Custom Schedule Components
 ![image](https://github.com/user-attachments/assets/b74f5012-5928-4c99-bcd1-15765b8e99bf)
@@ -158,3 +167,45 @@ export const AnotherCustomSchedule: FC<ScheduleComponentProps> = ({ schedule, st
     )
 }
 ```
+## Date And Language
+`makeTimeTable` HOC has a prop called `locales`, you can add your language by changing it:
+
+```typescript
+locales: {
+  today: 'Today',
+  week: 'Week',
+  day: 'Day',
+  weekNames: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  monthNames: [
+    'jan',
+    'feb',
+    'mar',
+    'apr',
+    'may',
+    'jun',
+    'jul',
+    'aug',
+    'sep',
+    'oct',
+    'nov',
+    'dec',
+  ],
+},
+```
+## Timetable Without Configurations
+![image](https://github.com/user-attachments/assets/a1d46802-9c65-4df8-90fb-771ca893cc91)
+
+You can import only Timetable itself from the package without configurations (table part with schedule items without buttons on the top):
+```typescript
+import { TimeTable } from "lesson-schedule-react"
+```
+and you can use it in your project simply:
+```typescript
+<TimeTable
+  pixelsForOneCellHeight={90}
+  activeDate={1729351987}
+  activeOption='week'
+  schedules={[]}
+/>
+```
+
