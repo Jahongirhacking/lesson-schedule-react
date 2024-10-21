@@ -1,6 +1,3 @@
-import Schedule from '../../components/Schedule';
-import makeTimeTable from '../../components/TimeTable/makeTimeTable';
-import { ISchedule } from '../../types/ISchedule';
 import {
   Button,
   DatePicker,
@@ -15,6 +12,9 @@ import {
 } from 'antd';
 import moment from 'moment';
 import { useMemo, useState } from 'react';
+import Schedule from '../../components/Schedule';
+import makeTimeTable from '../../components/TimeTable/makeTimeTable';
+import { ISchedule } from '../../types/ISchedule';
 import { lessonsArray } from './data';
 import './style.scss';
 
@@ -32,6 +32,18 @@ const Preview = () => {
   const [themeColor, setThemeColor] = useState<'light' | 'dark'>('light');
 
   const handleClick = () => {
+    if (
+      !auditoriumName ||
+      !lessonDate ||
+      !lessonTime[0] ||
+      !lessonTime[1] ||
+      !lessonName ||
+      !lessonType ||
+      !employeeName
+    ) {
+      message.error("There mustn't be empty fields on creating a lesson!");
+      return;
+    }
     setSchedules((prev: ISchedule[]): ISchedule[] => {
       return [
         ...prev,
