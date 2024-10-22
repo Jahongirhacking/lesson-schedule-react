@@ -4,7 +4,7 @@ Lesson Schedule component for everyone to use
 
 ## How To Create A Timetable?
 
-![image](https://github.com/user-attachments/assets/6e60f750-6f31-460e-adf9-21b5af7c1fbf)
+![lesson-schedule](https://github.com/user-attachments/assets/e6989ef9-b41c-4bb7-bf9a-1b21567fa01a)
 ![image](https://github.com/user-attachments/assets/9676fde5-c9cc-4383-91b3-257665e95a16)
 
 ```bash
